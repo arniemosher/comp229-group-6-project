@@ -1,0 +1,84 @@
+<!--Top/Header-->
+<%- include ../partials/header.ejs %>
+    
+<!--Navigation Bar-->
+<%- include ../partials/top_nav.ejs %>
+
+<!-- Main Content -->
+<main class="container">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6" style="padding: 10px;">
+                <h1><%= title %></h1>
+                <p>Currently this page is a placeholder</p>
+    
+                <form class="form" method="POST">
+                    <div class="form-group" style="padding: 10px;">
+                        <label for="txtName">Surveyor's Name</label>
+                        <input type="text" class="form-control"
+                        id="txtName"
+                        placeholder="Enter Name"
+                        name="name" 
+                        value="<%= Record.name %>"
+                        required>
+                    </div>
+    
+                    <div class="form-group" style="padding: 10px;">
+                        <label for="txtPhone">Surveyor's Phone Number</label>
+                        <input type="text" class="form-control"
+                        id="txtPhone"
+                        placeholder="Enter Phone Number"
+                        name="phoneNo"
+                        value="<%= Record.phoneNo %>"
+                        required>
+                    </div>
+    
+                    <div class="form-group" style="padding: 10px;">
+                        <label for="txtEmail">Surveyor's E-Mail</label>
+                        <input type="text" class="form-control"
+                        id="txtEmail"
+                        placeholder="Enter E-mail"
+                        name="email"
+                        value="<%= Record.email %>"
+                        required>
+                    </div>
+
+                    <div class="form-group" style="padding: 10px;">
+                        <p>Survey type:</p>
+                        <ul>
+                            <li>Multiple Choice</li>
+                            <li><strong>Agree/Disagree</strong></li>
+                            <li>Questionnaire</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-group" style="padding: 10px;">
+                        <p>Questions go here to be edited</p>
+                        <button class="btn btn-primary btn-lg">
+                            <i class="fas fa-check"></i>Edit Question
+                        </button>
+                    </div>
+
+                    <div class="form-group" style="padding: 10px;">
+                        <button class="btn btn-primary btn-lg">
+                            <i class="fas fa-check"></i>Add a Question
+                        </button>
+                    </div>
+    
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <i class="fas fa-check"></i>Submit
+                    </button>
+                    
+                    <a href="/list-surveys" class="btn btn-warning btn-lg">
+                        <i class="fas fa-undo"></i>Cancel
+                    </a>
+
+                </form>
+            </div>
+    
+        </div>
+    </div>
+</main>
+
+<!--Bottom Navigation & Footer-->
+<%- include ../partials/bottom_nav.ejs %>

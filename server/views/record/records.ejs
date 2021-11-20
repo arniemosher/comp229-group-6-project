@@ -1,0 +1,60 @@
+<!--Top/Header-->
+<%- include ../partials/header.ejs %>
+    
+<!--Navigation Bar-->
+<%- include ../partials/top_nav.ejs %>
+
+<!-- Main Content -->
+<main class="container">
+<div class="row">
+    <div>
+        <h1><%= title %></h1>
+        <a href="/list-surveys/add" class="btn btn-danger btn-lg" role="button">
+            <i class="fas fa-user-plus"></i>&nbsp;Add a new survey
+        </a>
+        <br>
+        <table class="table table-striped">
+            <!-- Header Row-->
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Survey No.</th>
+                    <th class="text-center" scope="col">Created By</th>
+                    <th class="text-center" scope="col">Phone Number</th>
+                    <th class="text-center" scope="col">E-mail Address</th>
+                    <th class="text-center" scope="col"></th>
+                    <th class="text-center" scope="col"></th>
+                </tr>
+            </thead>
+            <!-- Repeatable Template Row -->
+            <tbody>
+                <% for(let count = 0; count < ListRecords.length; count++) { %>
+                    <tr>
+                        <th class="text-center" scope="row"><%= (count+1) %></th>
+                        <td class="text-center"><%= ListRecords[count].name %></td>
+                        <td class="text-center"><%= ListRecords[count].phoneNo %></td>
+                        <td class="text-center"><%= ListRecords[count].email %></td>
+                        <td class="text-center">
+                            <a href="/list-surveys/take/<%= ListRecords[count]._id %>" class="btn btn-danger btn-lg">
+                                <i class="fas fa-pencil-alt"></i>&nbsp;Take
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/list-surveys/edit/<%= ListRecords[count]._id %>" class="btn btn-danger btn-lg">
+                                <i class="fas fa-user-edit"></i>&nbsp;Edit
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/list-surveys/remove/<%= ListRecords[count]._id %>" class="btn btn-danger btn-lg" name="deleteButton">
+                                <i class="fas fa-trash-alt"></i>&nbsp;Delete
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</main>
+
+<!--Bottom Navigation & Footer-->
+<%- include ../partials/bottom_nav.ejs %>

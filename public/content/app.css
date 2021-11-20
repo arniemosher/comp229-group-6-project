@@ -1,0 +1,12 @@
+/*Mostly used bootsrap components but there is a form in the Contact Me page that uses this css*/
+fieldset {
+	border-radius: 8px;
+	box-shadow: 1px 1px 1px gray;
+}
+legend {
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+#submitButton,#resetButton{
+    vertical-align: top;
+}
